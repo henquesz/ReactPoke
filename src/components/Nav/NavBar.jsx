@@ -61,7 +61,7 @@ export default function NavBar({ pokemonFilter }) {
             edge="start"
             color="inherit"
             aria-label="open drawer"
-            sx={{ mr: 2 }}
+            sx={{ mr: 2, display: { xs: 'none', sm: 'block' } }}
           >
             <Box component="img" src="./pokelogo.png" height="2.5em"></Box>
           </IconButton>
@@ -73,9 +73,9 @@ export default function NavBar({ pokemonFilter }) {
           >
             Bem vindo, {localStorage.getItem("name")}
           </Typography>
-          <Search onChange={(e) => pokemonFilter(e.target.value)}>
-            <SearchIconWrapper>
-              <SearchIcon />
+          <Search onChange={(e) => pokemonFilter(e.target.value)} sx={{display: { xs: 'flex', sm: 'block' }}}>
+            <SearchIconWrapper sx={{display:{xs: 'none', sm: 'block'}}}>
+              <SearchIcon sx={{display:{xs: 'none', sm: 'block'}}} />
             </SearchIconWrapper>
             <StyledInputBase
               placeholder="Pesquisar"
