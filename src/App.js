@@ -1,24 +1,29 @@
-import logo from './logo.svg';
+
 import './App.css';
+
+import { Routes, Route } from 'react-router-dom'
+import Initial from './components/Initial/Initial';
+import CadOne from './components/CadOne/CadOne';
+import CadTwo from './components/CadTwo/CadTwo';
+import { Home } from './components/Pages/Home';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <>
+      <header>
+        
       </header>
-    </div>
+      <main>
+        <Routes>
+          <Route path='/' element={<Initial></Initial>}></Route>
+          <Route path='/initial' element={<Initial></Initial>}></Route>
+          <Route path='/CadastroOne' element={<CadOne></CadOne>}></Route>
+          <Route path='/CadastroTwo' element={<CadTwo></CadTwo>}></Route>
+          <Route path='/Home' element={<Home></Home>}></Route>
+        </Routes>
+      </main>
+    </>
   );
 }
 

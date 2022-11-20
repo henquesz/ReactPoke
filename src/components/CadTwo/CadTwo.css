@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300&display=swap');
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.pokeimg{
+    max-width: 20%;
+}
+.nametitletwo{
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    margin-top: -70px;
+}
+.subtitle{
+    color: white;
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    margin-top: -10px;
+}
+.button{
+    background-color: #ff0040;
+    color: white;   
+    width: 150px;
+    height: 35px;
+    border-radius: 5px;
+    border: none;
+}
+.button:hover{
+    background-color: #ff2259;
+}
+
+input[type=text]{
+    background: transparent;
+    width:80%;
+    border:2px solid white;
+    border-radius:4px;
+    margin:8px 0;
+    outline:none;
+    padding:8px;
+    box-sizing:border-box;
+    transition:.3s;
+  }
+  
+  input[type=text]:focus{
+    border-color:yellow;
+    box-shadow:0 0 8px 0 blue;
+  }
+
+@media only screen and (max-width: 600px) {
+    .pokeimg{
+        max-width:5%;
+    }
+    .nametitle{
+        font-size: 15px;
+        margin-top: -80px;
+    }
+    .button{
+        width: 250px;
+        height: 50px;
+        font-size: medium;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .pokeimg{
+        max-width: 20%;
+    }
+    .nametitle{
+        font-size: 30px;
+    }
+  }
