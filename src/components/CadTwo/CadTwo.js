@@ -1,6 +1,7 @@
 import React, { Component, useState } from 'react';
 import { Navigate } from "react-router-dom";
 import './CadTwo.css'
+import App from '../../App'
 
 export class CadTwo extends Component {
   constructor(props) {
