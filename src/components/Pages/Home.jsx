@@ -103,7 +103,7 @@ export const Home = () => {
           <Container maxWidth="xg">
             <Grid container spacing={3}>
               {pokemons.map((pokemon, key) => (
-                <Grid item xs={5} md={3} key={key}>
+                <Grid item xs={5} md={3} lg={2} key={key}>
                   <PokeCard
                     name={pokemon.name}
                     image={pokemon.thumbnailImage}
