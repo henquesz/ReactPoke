@@ -54,7 +54,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 //passando a function de filtro para o component da nav
 export default function NavBar({ pokemonFilter }) {
   return (
-    <Box sx={{ flexGrow: 1, marginBottom:"2em" }}>
+    <Box sx={{ flexGrow: 1, marginBottom:"3em" }}>
       <AppBar position="static">
         <Toolbar>
           <IconButton
@@ -68,16 +68,16 @@ export default function NavBar({ pokemonFilter }) {
           </IconButton>
           {/* mostrando o nome do usuario com boas vindas */}
           <Typography
-            variant="h6"
+            variant="h7"
             noWrap
             component="div"
-            sx={{ flexGrow: 1, color:"#2d2d2d", display: { xs: 'none', sm: 'block' }}}
+            sx={{ flexGrow: 1, color:"white", display: { xs: 'none', sm: 'block' }}}
           >
             Bem vindo, {localStorage.getItem("name")}
           </Typography>
           {/* onChange para comparação da entrada do input com a validação */}
           <Search onChange={(e) => pokemonFilter(e.target.value)} sx={{display: { xs: 'flex', sm: 'block' }}}>
-            <SearchIconWrapper sx={{display:{xs: 'none', sm: 'block'}}}>
+            <SearchIconWrapper sx={{marginTop: 1, display:{xs: 'none', sm: 'block'}}}>
               <SearchIcon sx={{display:{xs: 'none', sm: 'block'}}} />
             </SearchIconWrapper>
             <StyledInputBase
