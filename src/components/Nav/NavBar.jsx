@@ -51,6 +51,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
+//passando a function de filtro para o component da nav
 export default function NavBar({ pokemonFilter }) {
   return (
     <Box sx={{ flexGrow: 1, marginBottom:"2em" }}>
@@ -65,6 +66,7 @@ export default function NavBar({ pokemonFilter }) {
           >
             <Box component="img" src="./pokelogo.png" height="2.5em"></Box>
           </IconButton>
+          {/* mostrando o nome do usuario com boas vindas */}
           <Typography
             variant="h6"
             noWrap
@@ -73,6 +75,7 @@ export default function NavBar({ pokemonFilter }) {
           >
             Bem vindo, {localStorage.getItem("name")}
           </Typography>
+          {/* onChange para comparação da entrada do input com a validação */}
           <Search onChange={(e) => pokemonFilter(e.target.value)} sx={{display: { xs: 'flex', sm: 'block' }}}>
             <SearchIconWrapper sx={{display:{xs: 'none', sm: 'block'}}}>
               <SearchIcon sx={{display:{xs: 'none', sm: 'block'}}} />

@@ -4,6 +4,7 @@ import './Initial.css';
 import { Link } from 'react-router-dom'
 
 export class Initial extends Component {
+  //Tela inicial
   render() {
     <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
     return(

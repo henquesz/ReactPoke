@@ -6,24 +6,30 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
+//passando todas as informações necessárias da api para o componente de card
 export default function PokeCard({ name, image, types, weight, abilities }) {
   return (
     <Card sx={{ maxWidth: 345 }}>
+      {/* imagem do pokemon - api */}
       <CardMedia
         component="img"
         image={image}
         alt="pokemon"
       />
       <CardContent>
+        {/* //conteudo com o nome do pokemon - api */}
         <Typography gutterBottom variant="h5" component="div">
           {name}
         </Typography>
+        {/* // tipo do pokemon - api */}
         <Typography gutterBottom variant="h7" component="div">
          Type: {types}
         </Typography>
+        {/* //tamanho do pokemon - api */}
         <Typography gutterBottom variant="h7" component="div">
          Weigth: {weight}
         </Typography>
+        {/* //habilidades do pokemon - api */}
         <Typography gutterBottom variant="h8" component="div">
         abilities: {abilities}
         </Typography>

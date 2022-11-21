@@ -12,34 +12,42 @@ import "./Home.css";
 import axios from "axios";
 
 export const Home = () => {
+  //array de pokemons que será mostrado na tela
   const [pokemons, setPokemons] = useState([]);
 
+  //função para setar o novo tipo de pokemon favorito no localstorage
   const handleFire = () => {
     localStorage.setItem("favorite type pokemon", "fire");
   };
+  //função para setar o novo tipo de pokemon favorito no localstorage
   const handleAqua = () => {
     localStorage.setItem("favorite type pokemon", "water");
   };
+  //função para setar o novo tipo de pokemon favorito no localstorage
   const handleEletric = () => {
     localStorage.setItem("favorite type pokemon", "Eletric");
   };
+  //função para setar o novo tipo de pokemon favorito no localstorage
   const handleGrass = () => {
     localStorage.setItem("favorite type pokemon", "grass");
   };
 
+  //useEffect para retorno da lista de pokemons
   useEffect(() => {
     getPokemons();
   }, []);
 
+  //Comunicação com a api através do axios
   const getPokemons = () => {
     axios
       .get(
         "https://portaldomedico.blob.core.windows.net/desafios/reactjs/data/pokemons.json"
       )
-      .then((res) => setPokemons(res.data))
+      .then((res) => setPokemons(res.data)) //retornando os valores da api no array de pokemons
       .catch((err) => console.log(err));
   };
 
+  //filtro de pokemons através da entrada da barra de pesquisa.
   const pokemonFilter = (name) => {
     var filteredPokemons = [];
     if (name === "") {
@@ -50,17 +58,20 @@ export const Home = () => {
         filteredPokemons.push(pokemons[i]);
       }
     }
-
+    //setando pokemons filtrados no array
     setPokemons(filteredPokemons);
   };
 
+// tentativa de filtragem dos pokemons através do tipo favorito do usuario
 //   var typePoke = pokemons.filter(pokemon => pokemon.type == localStorage.getItem("favorite type pokemon"));
 //   typePoke.forEach(pokemon => { 
 //       console.log(pokemon);
 //       setPokemons(typePoke);
 //   });
 
+//validação para caso o usuario não esteja logado
  if(localStorage.getItem("name") == null){
+  //caso ele não esteja, limpar o tipo favorito para evitar bugs na linha de raciocinio da aplicação
     localStorage.clear("favorite type pokemon");
     return <Navigate to='/'></Navigate>
   }

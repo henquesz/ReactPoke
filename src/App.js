@@ -7,7 +7,7 @@ import CadOne from './components/CadOne/CadOne';
 import CadTwo from './components/CadTwo/CadTwo';
 import { Home } from './components/Pages/Home';
 
-
+//Declaração de rotas para navegação da aplicação.
 function App() {
   return (
     <>

@@ -4,6 +4,7 @@ import './CadTwo.css'
 import App from '../../App'
 
 export class CadTwo extends Component {
+    //Constructor para submit de informações
   constructor(props) {
     super(props);
     this.state = {value: ''};
@@ -12,15 +13,18 @@ export class CadTwo extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
 
   }
+    //Setando a informação do campo
   handleChange(event) {
     this.setState({value: event.target.value});
   }
-
+  //Setando o tipo de pokemon favorito no localstorage
   handleSubmit(event) {
     localStorage.setItem("favorite type pokemon", this.state.value)
     event.preventDefault();
   }
+    //render para front end
   render() {
+    //validação caso o usuario já tenha registrado o tipo favorito
     if(localStorage.getItem("favorite type pokemon") != null){
       return <Navigate to='/Home'></Navigate>
     }

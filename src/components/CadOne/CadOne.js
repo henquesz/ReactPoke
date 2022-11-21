@@ -5,6 +5,7 @@ import { Navigate } from "react-router-dom";
 import './CadOne.css'
 
 export class CadOne extends Component {
+  //Constructor para submit de informações
   constructor(props) {
     super(props);
     this.state = {value: ''};
@@ -13,15 +14,20 @@ export class CadOne extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  //Setando a informação do campo e retornando a próxima tela
   handleChange(event) {
     this.setState({value: event.target.value});
     return <Link to='/'></Link>
   }
+
+  //Setando o nome do usuario no localstorage
   handleSubmit(event) {
     localStorage.setItem("name", this.state.value);
-    
   }
+
+  //render para front end
   render() {
+    //validação caso o usuario já tenha registrado um nome
     if(localStorage.getItem("name") != null){
       return <Navigate to='/CadastroTwo'></Navigate>
     }
